@@ -1,0 +1,143 @@
+/* Animated Gradient Background */
+
+.login-body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family: system-ui,-apple-system,sans-serif;
+
+background: linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+background-size: 400% 400%;
+animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.dashboard-body{
+background: linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+background-size: 400% 400%;
+animation: gradientMove 15s ease infinite;
+
+}
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Glassmorphism Card */
+
+.login-card{
+width:100%;
+max-width:420px;
+
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.25);
+
+padding:40px;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+
+animation: cardFade 1s ease;
+}
+
+@keyframes cardFade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* Floating Labels */
+
+.form-floating input{
+background:rgba(255,255,255,0.8);
+border:none;
+border-radius:10px;
+}
+
+.form-floating input:focus{
+box-shadow:0 0 0 2px rgba(255,255,255,0.4);
+}
+
+
+/* Login Button */
+
+.login-btn{
+border-radius:12px;
+font-weight:600;
+transition:all .25s ease;
+}
+
+.login-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.login-btn:active{
+transform:scale(.97);
+}
+
+
+/* Micro interaction */
+
+.form-floating input:focus{
+transform:scale(1.02);
+transition:.2s;
+}
+
+
+/* Password toggle */
+
+.password-toggle{
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+font-size:14px;
+opacity:.7;
+}
+
+.password-toggle:hover{
+opacity:1;
+}
+
+.logo{
+font-weight:700;
+letter-spacing:1px;
+margin-bottom:20px;
+}
+
+/* Navbar */
+
+.navbar-glass{
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+/* Card Hover Micro Interaction */
+
+.feature-card{
+transition: all .25s ease;
+}
+
+.feature-card:hover{
+transform: translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}

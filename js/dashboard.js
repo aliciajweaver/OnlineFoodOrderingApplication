@@ -41,21 +41,20 @@ function displayFood(meals){
  meals.forEach(meal=> {
 
     //console.log(meal.strMeal+" "+meal.strMealThumb)
-    let price = Math.floor(Math.random()*100) + 50; // generate random price for food item between 50 and 150
+    let price = Math.floor(Math.random()*40) + 10; // generate random price for food item between 10 and 50
     //console.log(price)
     //price = price + 10; // increase price by 10 for each food item
     foodSelection.innerHTML +=`
-        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center">
-            <div class="w-full aspect-square mb-2 overflow-hidden flex items-center justify-center">
-                <img src="${meal.strMealThumb}" alt="${meal.strMeal}"
-                    class="object-cover w-full h-full rounded-lg max-h-48" />
+    <div class="row row-cols-1 row-cols-md-3 g-4"> 
+        <div class="card" style="width: 18rem;">
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${meal.strMeal}</h5>
+                <p class="card-text">Price: $${price}</p>
+                <button class="btn btn-primary" onclick="addToCart(${meal.idMeal},'${meal.strMeal}',${price})">Add to Cart</button>
             </div>
-            <h3 class="text-lg font-semibold text-center">${meal.strMeal}</h3>
-            <p class="text-gray-800 text-sm text-center">Price: $${price}</p>
-            <input type="button" value = "Add To Cart"
-                onclick="addToCart(${meal.idMeal},'${meal.strMeal}',${price})"
-                class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors duration-300 cursor-pointer w-full mt-2" />
         </div>
+    </div>
     `
    
  })   
