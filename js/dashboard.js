@@ -84,17 +84,17 @@ function updateCart() {
     let total = 0;
     cart.forEach(item => {
         cartItem.innerHTML += `
-            <div class="bg-gray-100 rounded-lg shadow p-4 mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
-                <div>
-                    <h3 class="text-lg font-semibold mb-1">${item.mealName}</h3>
-                    <p class="text-gray-700 mb-1">Price: <span class="font-medium">$${item.price}</span></p>
-                    <p class="text-gray-700 mb-2">Quantity: <span class="font-medium">${item.quantity}</span></p>
+            <div class="cart-card">
+                <div class="card-body">
+                    <h3 class="card-title">${item.mealName}</h3>
+                    <p class="card-text">Price: <span class="font-weight-bold">$${item.price}</span></p>
+                    <p class="card-text">Quantity: <span class="font-weight-bold">${item.quantity}</span></p>
                 </div>
                 <div class="flex space-x-2 mt-2 md:mt-0">
                     <input type="button" value="+" onClick="changeQuantity(${item.mealId}, 1)"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded cursor-pointer"/>
+                        class="btn btn-primary"/>
                     <input type="button" value="-" onClick="changeQuantity(${item.mealId}, -1)"
-                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded cursor-pointer"/>
+                        class="btn btn-danger"/>
                 </div>
             </div>
         `;
